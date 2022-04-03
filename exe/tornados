@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative "../lib/tornados"
+
+Tornados::CliClient.new.start
