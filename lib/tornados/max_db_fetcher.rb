@@ -21,11 +21,12 @@ module Tornados
 
     private
 
-    attr_accessor :max_db_file_path
+    attr_accessor :key, :max_db_file_path
 
     public
 
-    def initialize(max_db_storage = nil)
+    def initialize(key, max_db_storage = nil)
+      @key = key
       max_db_storage = max_db_storage || MAX_DB_STORAGE
       @max_db_file_path = File.join(max_db_storage, MAX_DB_FILE_NAME)
     end
@@ -47,9 +48,9 @@ module Tornados
     end
 
     def license_key_option
-      raise MaxDbKeyNotFoundError unless ENV["GEO_API_DATABASE_LICENSE_KEY"]
+      raise MaxDbKeyNotFoundError unless key
 
-      {license_key: ENV["GEO_API_DATABASE_LICENSE_KEY"]}
+      {license_key: key}
     end
 
     def extract_tar_gz_file(file)

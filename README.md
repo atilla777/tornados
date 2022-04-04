@@ -14,14 +14,21 @@ To install
 ```bash
 gem install tornados
 ```
-
-To use
+To use (-k - is a MaxMind secret key):
 ```bash
-tornados
+tornados -k key
+```
+or (MaxMind keys as environmet variable and -i key define what country nodes to include into result):
+```bash
+GEO_API_DATABASE_LICENSE_KEY=key tornados -i RU
 ```
 After this, tor_exit_nodes_list.csv will be created in current directory.
 
 You can use this file in SIEM, for example, to detection malicious network traffic.
+To display help info:
+```ruby
+tornados -h
+```
 
 ## Library
 
@@ -47,7 +54,7 @@ returns array of arrays whith next format
 ### Tornados::MaxDbFetcher
 
 ```ruby
-Tornados::MaxDbFetcher.call
+Tornados::MaxDbFetcher.call(key)
 ```
 download to disk max db file and return path to it
 

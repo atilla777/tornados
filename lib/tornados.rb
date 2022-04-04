@@ -13,6 +13,7 @@ require_relative "tornados/file_writer"
 require_relative "tornados/http_client"
 require_relative "tornados/nodes_fetcher"
 require_relative "tornados/max_db_fetcher"
+require_relative "tornados/filter"
 require_relative "tornados/geo_enrich"
 require_relative "tornados/cli_client"
 
