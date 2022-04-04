@@ -2,7 +2,7 @@
 
 module Tornados
   TOR_NODES_LIST_URI = "https://raw.githubusercontent.com"
-  TOR_NODES_LIST_PATH ="SecOps-Institute/Tor-IP-Addresses/master/tor-nodes.lst"
+  TOR_NODES_LIST_PATH ="SecOps-Institute/Tor-IP-Addresses/master/tor-exit-nodes.lst"
 
   # Service for download exit tor nodes IP list.
   # Result is array of arrays:
